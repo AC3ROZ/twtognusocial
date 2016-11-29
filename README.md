@@ -7,6 +7,7 @@
 ## starting
 
 ```
+export TWITTER_ID='Your Twitter id'
 export TWITTER_CK='xxxxxxxxxxxxxxxxxxxxxxx'
 export TWITTER_CS='xxxxxxxxxxxxxxxxxxxxxxx'
 export TWITTER_AT='xxxxxxxxxxxxxxxxxxxxxxx'

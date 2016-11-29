@@ -7,6 +7,7 @@ from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 
+TWITTER_MY_ACCOUNT_ID = environ.get('TWITTER_ID')
 TWITTER_CK = environ.get('TWITTER_CK')
 TWITTER_CS = environ.get('TWITTER_CS')
 TWITTER_AT = environ.get('TWITTER_AT')
@@ -28,10 +29,8 @@ def gnu_social_post(text):
 class GnuSocialOutListener(StreamListener):
 
     def on_status(self, status):
-        print(type(status))
-        print(status)
         if status.in_reply_to_status_id is None:
-            if status.user.id == 1477133816:
+            if status.user.id == int(TWITTER_MY_ACCOUNT_ID):
                 try:
                     gnu_social_post(status.text)
                 except Exception as e:
